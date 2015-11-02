@@ -4,11 +4,11 @@ Omniscient.js is an event management library that:
 
 1. translates UI interactions into chronological events that make sense to humans, based on semantic markup and meaningful context labeling.
 
-2. and then executes user configured event handlers.
+2. executes user configured handlers so Omniscient.js events can be sent to Mixpanel, GA, and etc.
 
-For instance, it can be used to track user interaction DOM events and send them to analytic vendors.
+So you can track user interaction DOM events and send them to analytic vendors.
 
-When it catches an event on DOM body, in the capuring phase, Omniscient examines the "target" element, walks up until finding a parent with attribute "event-context", then puts together the event-context with semnatic markup information to record the event. Custom non-UI events are also supported.
+How it works: in the capuring phase of DOM event handling, Omniscient examines the "target" element, walks up the DOM tree until finding a parent with attribute "event-context". Then Omniscient combines the event-context with semnatic markup information to construct the Omniscient event. Custom non-UI events are also supported.
 
 ## Getting Started
 
@@ -20,7 +20,7 @@ To edit source, run
 
 then edit the source files in src directory.
 
-Install grunt via
+If you don't have Grunt, install it via
 
     sudo npm install -g grunt-cli
 
